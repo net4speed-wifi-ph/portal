@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="slick/slick.css" type="text/css" />
+<link rel="stylesheet" href="slick/slick-theme.css" type="text/css" />
+<link rel="stylesheet" href="index.css?ver=4222024" type="text/css" />
+<link rel="stylesheet" href="//140.245.117.70/wp-admin/admin-ajax.php?action=portalcss&portalid=20897&preview=" type="text/css" />
+<style>
+    ::-webkit-scrollbar {
+    width: 5px;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+    background: #F2F2F2;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+    background: #E2643E; border-radius: 5px;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+    background: #269584;
+    }
+</style>
+<body class="portal">
+    <div id="style-preview"></div>
+    <div id="background-slider"></div>
+    <div id="preloader">
+        <div class="inner">
+            <div class="branding">
+                <div class="brand-name">WiFi Voucher</div>
+            </div>
+            <span class="loader"></span>
+        </div>
+        <div class="waves">
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+      </div>
+    <div class="oper-section-outer">
+        <div class="oper-section-inner">
+
+
+            <div class="header-container">
+                <div class="header-wrapper"></div>
+                <div class="branding">
+                    <div class="brand-name">WiFi Voucher</div>
+                </div>
+            </div>
+
+            <div class="form-box form-glass">
+                <div class="popcheck" id="popcheck">
+                  <div class="status">
+                    <p id="oper-hint">Please try again.</p>
+                  </div>
+                  <button type="button" class="button" onclick="closePopup()">OK</button>
+                </div>
+
+                <!-- Start of Time & Date | Main Greeting -->
+                <div class="time-date tdbg">
+                  <div class="display-date">
+                    <p id="maingreeting"></p>
+                    <p id="day">day</p>
+                    <p class="display-time"></p>
+                  </div>
+                </div>
+                <!-- End of Time & Date | Main Greeting -->
+                <div id="hotspot-section">
+                    <select id="hotspot-selector" class="oper-section-item">
+                                            </select>
+                </div>
+                                <form id="login-form">
+                    <div id="input-voucher">
+                            <input id="voucherCode" class="oper-section-item input" name="voucherCode" type="text" placeholder="Voucher Code"/>
+                        </div>
+                                                        <div id="input-user">
+                        <input id="username" class="oper-section-item input" name="username" type="text" placeholder="Username"/>
+                    </div>
+                    <div id="input-password" class="user-input">
+                        <input id="password" class="oper-section-item input" name="password" type="password"  placeholder="Password"/>
+                    </div>
+                    <div id="input-simple">
+                        <input id="simplePassword" class="password oper-section-item input" name="simplePassword" type="password" placeholder="Password"/>
+                    </div>
+                    <div id="input-phone-num">
+                        <span class="add">+</span><input id="country-code" class="input"><input id="phone-number" class="input" name="phone-number" type="text" placeholder="Phone Number"/>
+                    </div>
+                    <div id="input-verify-code">
+                        <input id="verify-code" class="input" name="verify-code" type="text" placeholder="Verification Code"/><button id="get-code" class="button" onclick="openPopup()">Get Code</button>
+                    </div>
+                                        <input name="clientMac" id="cMac" style="display:none"/>
+                    <input name="radiusSvrIp" id="radiusServerIp" style="display:none"/>
+                </form>
+                <div id="button-area">
+                                    <button id="button-facebook" class="button oper-section-item" onclick="openPopup()">Facebook</button> 
+                                        <button id="button-login" class="button oper-section-item" onclick="openPopup(); audio.play()" >Connect</button>
+                </div>
+                <div class="promo-rates-container">
+                    <button id="promo-rates-btn" class="button">PROMO RATES</button>
+                </div>
+            </div>
+
+            <div class="footer-container">
+                <div class="footer-wrapper"></div>
+            </div>
+    </div>
+</div>
+<div id="promo-rates">
+    <div class="overlay"></div>
+    <div class="content">
+        <header><h2>WiFi Rates</h2></header>
+        <div class="inner"></div>
+        <div class="sign-in text-center">
+            <button class="button">SIGN IN</button>
+        </div>
+    </div>
+</div>
+<div class="waves">
+    <div class="wave"></div>
+    <div class="wave"></div>
+</div>
+</body>
+<script src="jquery-3.7.1.min.js"></script>
+<script src="slick/slick.min.js"></script>
+<script>
+    const portalID = 20897;
+    var loader = document.getElementById("preloader");
+window.addEventListener("load", function () {
+    loader.style.display = "none";
+});
+setTimeout(function(){
+    loader.style.display = "none";
+}, 2000);
+</script>
+<script src="//140.245.117.70/wp-admin/admin-ajax.php?action=portaljs&portalid=20897&preview="></script>
+<script src="index.js?ver=5"></script>
+ <script type="text/javascript">
+    const audio = new Audio();
+        audio.src = "./audio/login.mp3";
+      </script>
+
+  <script>
+    let popcheck = document.getElementById("popcheck");
+
+    function openPopup() {
+      popcheck.classList.add("open-popup");
+    }
+    function closePopup() {
+      popcheck.classList.remove("open-popup");
+    }
+  </script>
